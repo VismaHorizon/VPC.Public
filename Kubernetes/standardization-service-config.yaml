@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vpc-standardization-settings
+  namespace: vpc-test
+data:
+  appsettings.json: |
+    <Replace with appsettings.json content>  
+  nlog.config: |
+    <Replace with nlog.config content> 
