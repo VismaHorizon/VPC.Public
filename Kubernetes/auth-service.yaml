@@ -27,7 +27,7 @@ spec:
           value: http://+:5000
         image: ghcr.io/vismahorizon/horizon.authentication.service:460.6
         imagePullPolicy: Always
-        name: st-service
+        name: authentication-service
         resources: {}
         ports:
         - containerPort: 5000
