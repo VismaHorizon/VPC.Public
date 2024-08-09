@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vpc-as-settings
+  namespace: vpc-test
+data:
+  appsettings.xml: |
+    <Replace with appsettings.xml content>  
+  nlog.config: |
+    <Replace with nlog.config content> 
+  FTG20DB.INI: |
+    <Replace with FTG20DB.INI content>
