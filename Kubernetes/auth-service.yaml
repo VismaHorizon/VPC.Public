@@ -25,7 +25,7 @@ spec:
           value: Europe/Riga
         - name: ASPNETCORE_URLS
           value: http://+:5000
-        image: ghcr.io/vismahorizon/horizon.authentication.service:460.6
+        image: ghcr.io/vismahorizon/horizon.authentication.service:645.3
         imagePullPolicy: Always
         name: authentication-service
         resources: {}
