@@ -31,13 +31,8 @@ spec:
         - name: appsettings
           mountPath: /app/appsettings.json
           subPath: appsettings.json
-        - name: app-log
-          mountPath: /app/logs
       restartPolicy: Always
       volumes:
-      - name: app-log
-        emptyDir:
-          medium: Memory
       - name: appsettings
         configMap:
           name: vpc-standardization-settings

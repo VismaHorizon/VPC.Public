@@ -41,13 +41,8 @@ spec:
         - name: ftg20db
           mountPath: /app/FTG20DB.INI
           subPath: FTG20DB.INI        
-        - name: app-log
-          mountPath: /app/logs
       restartPolicy: Always
       volumes:
-      - name: app-log
-        emptyDir:
-          medium: Memory
       - name: appsettings
         configMap:
           name: vpc-as-settings
