@@ -28,7 +28,15 @@ spec:
         image: ghcr.io/vismahorizon/horizon.authentication.service:646.3
         imagePullPolicy: Always
         name: authentication-service
-        resources: {}
+        resources:
+          requests:
+            cpu: '2'
+            memory: 2G
+            ephemeral-storage: 10M
+          limits:
+            cpu: '2'
+            memory: 2G
+            ephemeral-storage: 10M
         ports:
         - containerPort: 5000
         volumeMounts:
