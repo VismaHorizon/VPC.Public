@@ -26,15 +26,7 @@ spec:
         image: ghcr.io/vismahorizon/horizon.vpc.standardization.service:646.3
         imagePullPolicy: Always
         name: standardization-service
-        resources:
-          requests:
-            cpu: '2'
-            memory: 1G
-            ephemeral-storage: 10M
-          limits:
-            cpu: '2'
-            memory: 1G
-            ephemeral-storage: 10M
+        resources: {}
         volumeMounts:
         - name: appsettings
           mountPath: /app/appsettings.json
