@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vpc-email
+  name: vpc-email
+  namespace: vpc-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vpc-email
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: vpc-email
+    spec:
+      containers:
+      - env:
+        - name: SERVICENAME
+          value: vpc-email
+        - name: TZ
+          value: Europe/Riga
+        image: ghcr.io/vismahorizon/numo.notification.email.api:81
+        imagePullPolicy: Always
+        name: email-service
+        resources: {}
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: appsettings
+          mountPath: /app/appsettings.xml
+          subPath: appsettings.xml
+        - name: nlog
+          mountPath: /app/nlog.config
+          subPath: nlog.config     
+      restartPolicy: Always
+      volumes:
+      - name: appsettings
+        configMap:
+          name: vpc-email-settings
+          items:
+            - key: appsettings.xml
+              path: appsettings.xml
+      - name: nlog
+        configMap:
+          name: vpc-email-settings
+          items:
+            - key: nlog.config
+              path: nlog.config          
+      tolerations:
+      - key: node.kubernetes.io/not-ready
+        effect: NoExecute
+        tolerationSeconds: 0
+      - key: node.kubernetes.io/unreachable
+        effect: NoExecute
+        tolerationSeconds: 0
+status: {}

@@ -8,3 +8,6 @@ resources:
 - redis.yaml
 - standardization-service.yaml
 - standardization-service-config.yaml
+- email-pg-db.yaml
+- email-service-config.yaml
+- email-service.yaml
