@@ -31,25 +31,16 @@ spec:
         - containerPort: 5000
         volumeMounts:
         - name: appsettings
-          mountPath: /app/appsettings.xml
-          subPath: appsettings.xml
-        - name: nlog
-          mountPath: /app/nlog.config
-          subPath: nlog.config     
+          mountPath: /appsettings.json
+          subPath: appsettings.json   
       restartPolicy: Always
       volumes:
       - name: appsettings
         configMap:
           name: vpc-email-settings
           items:
-            - key: appsettings.xml
-              path: appsettings.xml
-      - name: nlog
-        configMap:
-          name: vpc-email-settings
-          items:
-            - key: nlog.config
-              path: nlog.config          
+            - key: appsettings.json
+              path: appsettings.json         
       tolerations:
       - key: node.kubernetes.io/not-ready
         effect: NoExecute
