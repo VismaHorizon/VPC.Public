@@ -23,7 +23,7 @@ spec:
           value: vpc-standardization
         - name: TZ
           value: Europe/Riga
-        image: ghcr.io/vismahorizon/horizon.vpc.standardization.service:655.3
+        image: ghcr.io/vismahorizon/horizon.vpc.standardization.service:660.8
         imagePullPolicy: Always
         name: standardization-service
         resources: {}
