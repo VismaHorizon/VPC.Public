@@ -23,7 +23,7 @@ spec:
           value: vpc-email
         - name: TZ
           value: Europe/Riga
-        image: ghcr.io/vismahorizon/numo.notification.email.api:81
+        image: ghcr.io/vismahorizon/numo.notification.email.api:185
         imagePullPolicy: Always
         name: email-service
         resources: {}
